@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <title>b128.net - cjdns installieren</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutzerklaerung.html">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1>cjdns installieren</h1>
+      <p>
+        In diesem Tutorial werde ich erklären, wie man cjdns unter Ubuntu installiert und danach für den ersten Start einrichtet.
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Installation</h2>
+    <p>Für die Installation wird das neuste Ubuntu empfohlen, das ist zur Zeit die Version 14.04.</p>
+    <p>Zu erst wird das System geupdatet. Beim Ausführen der ersten Zeile kommt eine Passwortabfrage,
+    damit gewährt ihr dem System erweiterte Benutzerrechte, nur damit kann es die Updates installieren.</p>
+<pre>
+sudo apt-get update
+sudo apt-get upgrade
+</pre>
+    <p>Nach dem das erledigt ist, können alle benötigten Pakete installiert werden.</p>
+<pre>
+sudo apt-get install nodejs git build-essential
+</pre>
+    <p>Dann wechseln wir in den Ordner, in dem cjdns installiert werden soll, bei mir ist das <em>/opt</em>.</p>
+<pre>
+cd /opt
+</pre>
+    <p>Im Anschluss wird der cjdns-Code runtergeladen und compiliert.</p>
+<pre>
+git clone https://github.com/cjdelisle/cjdns.git cjdns
+cd cjdns
+./do
+</pre>
+    <p>Das kann schon mal eine Minute dauern.</p>
+    <p>Wenn alles erfolgreich verlaufen ist, sollte am Ende die Ausgabe <code>Build completed successfully,
+    type ./cjdroute to begin setup.</code> am Bildschirm erscheinen.</p>
+    <h2>Konfiguration erstellen</h2>
+    <p>Die Konfigurationsdatei wird nun von cjdns erzeugt und unter <em>/etc/cjdroute.conf</em> abgelegt.
+    </p>
+<pre>
+sudo su -c "(umask 077 && ./cjdroute --genconf &gt; /etc/cjdroute.conf)"
+</pre>
+    <p>Danach können wir cjdns starten</p>
+<pre>
+sudo su -c "/opt/cjdns/cjdroute &lt; /etc/cjdroute.conf"
+</pre>
+    <p>Es folgen viele Zeilen über den Start von cjdns, die mit <code>Cjdns has started up in the background</code>
+    enden. Danach läuft cjdns im Hintergrund.</p>
+
+    <p>Mit dem Befehl</p>
+<pre>
+sudo killall /opt/cjdns/cjdroute
+</pre>
+    <p>Kann cjdns wieder beendet werden</p>
+    <p>Anschließend muss die cjdns richtig eingestellt und abgesichert werden. Das wird in
+    nachfolgenden Tutorials abgehandelt.</p>
+  </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+
