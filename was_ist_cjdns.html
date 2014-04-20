@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <title>b128.net - Was ist cjdns?</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutzerklaerung.html">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Was ist cjdns?</h1>
+      <p>
+        <a href="https://github.com/cjdelisle/cjdns/blob/master/README.md">Link zur Webseite</a>
+      </p>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="row">
+    
+      <div class="col-md-4">
+        <h2>dezentral</h2>
+        <p>
+          Durch die <a href="https://de.wikipedia.org/wiki/Vermaschtes_Netz">dezentrale</a> Struktur von cjdns, kann der gesamten Netzwerkverkehr nicht an einem zentralen Punkt belauscht werden.
+        </p>
+      </div>
+    
+      <div class="col-md-4">
+        <h2>keine Netzkonfiguration</h2>
+        <p>
+          Es ist nicht mehr nötig komplizierte Routen anzugeben - cjdns macht das <a href="https://de.wikipedia.org/wiki/Verteilte_Hashtabelle">automatisch</a>.
+        </p>
+      </div>
+    
+      <div class="col-md-4">
+        <h2>es ist nur IPv6</h2>
+        <p>
+          cjdns verwendet <a href="https://de.wikipedia.org/wiki/Ipv6">IPv6</a> für die Adressierung, damit ist es mit jeder Software kompatibel, die IPv6 unterstützt.
+        </p>
+      </div>
+
+    </div>
+    
+    <div class="row">
+      
+      <div class="col-md-4">
+        <h2>E2E-Verschlüsselung</h2>
+        <p>
+          Datenpakete werden bei der Übertragung <a href="https://de.wikipedia.org/wiki/Ende-zu-Ende-Verschl%C3%BCsselung">verschlüsselt</a> und können nur vom Empfänger wieder entschlüsselt werden.
+        </p>
+      </div>
+      
+      <div class="col-md-4">
+        <h2>PFS</h2>
+        <p>
+          PFS macht die Verschlüsselung noch robuster.
+          Mit PFS gesicherte Datenpakete bleiben selbst beim bekannt werden der Schlüssel <a href="https://de.wikipedia.org/wiki/Perfect_Forward_Secrecy">sicher</a>.
+        </p>
+      </div>
+      
+      <div class="col-md-4">
+        <h2>schnelles Routing</h2>
+        <p>
+          Router müssen nicht den kompletten Weg bis zum Ziel berechnen. Jedes Datenpaket liefert eine
+          <a href="https://de.wikipedia.org/wiki/Multiprotocol_Label_Switching">Wegbeschreibung</a> mit, der Router muss diese nur auslesen.
+        </p>
+      </div>
+      
+    </div>
+  </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+
