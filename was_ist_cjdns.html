@@ -38,24 +38,25 @@
   </div>
   
   <div class="container">
+    <h1>Was cjdns ist</h1>
     <div class="row">
     
       <div class="col-md-4">
-        <h2>dezentral</h2>
+        <h3>dezentral</h3>
         <p>
           Durch die <a href="https://de.wikipedia.org/wiki/Vermaschtes_Netz">dezentrale</a> Struktur von cjdns, kann der gesamten Netzwerkverkehr nicht an einem zentralen Punkt belauscht werden.
         </p>
       </div>
     
       <div class="col-md-4">
-        <h2>keine Netzkonfiguration</h2>
+        <h3>keine Netzkonfiguration</h3>
         <p>
           Es ist nicht mehr nötig komplizierte Routen anzugeben - cjdns macht das <a href="https://de.wikipedia.org/wiki/Verteilte_Hashtabelle">automatisch</a>.
         </p>
       </div>
     
       <div class="col-md-4">
-        <h2>es ist nur IPv6</h2>
+        <h3>es ist nur IPv6</h3>
         <p>
           cjdns verwendet <a href="https://de.wikipedia.org/wiki/Ipv6">IPv6</a> für die Adressierung, damit ist es mit jeder Software kompatibel, die IPv6 unterstützt.
         </p>
@@ -66,14 +67,14 @@
     <div class="row">
       
       <div class="col-md-4">
-        <h2>E2E-Verschlüsselung</h2>
+        <h3>E2E-Verschlüsselung</h3>
         <p>
           Datenpakete werden bei der Übertragung <a href="https://de.wikipedia.org/wiki/Ende-zu-Ende-Verschl%C3%BCsselung">verschlüsselt</a> und können nur vom Empfänger wieder entschlüsselt werden.
         </p>
       </div>
       
       <div class="col-md-4">
-        <h2>PFS</h2>
+        <h3>PFS</h3>
         <p>
           PFS macht die Verschlüsselung noch robuster.
           Mit PFS gesicherte Datenpakete bleiben selbst beim bekannt werden der Schlüssel <a href="https://de.wikipedia.org/wiki/Perfect_Forward_Secrecy">sicher</a>.
@@ -81,13 +82,26 @@
       </div>
       
       <div class="col-md-4">
-        <h2>schnelles Routing</h2>
+        <h3>schnelle Verarbeitung</h3>
         <p>
-          Router müssen nicht den kompletten Weg bis zum Ziel berechnen. Jedes Datenpaket liefert eine
-          <a href="https://de.wikipedia.org/wiki/Multiprotocol_Label_Switching">Wegbeschreibung</a> mit, der Router muss diese nur auslesen.
+          Router müssen nicht den kompletten Weg bis zum Ziel berechnen.
+          Jedes Datenpaket liefert eine Wegbeschreibung mit, der Router muss diese nur befolgen.
+          Das spart Ressourcen und hilft zu <a href="https://de.wikipedia.org/wiki/Multiprotocol_Label_Switching">weniger Latenz</a>.
         </p>
       </div>
       
+    </div>
+  </div>
+  
+  <div class="container">
+    <h1>Was cjdns <em>nicht</em> ist</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <h3>anonym</h3>
+        <p>
+          Der Ursprung und das Ziel eines Datenpaketes wird nicht vollkommen unkenntlich gemacht.
+        </p>
+      </div>
     </div>
   </div>
 
