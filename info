@@ -1,0 +1,32 @@
+Bootstrap: 3.1.1
+jQuery: 2.1.0
+
+server {
+  listen [::]:80;
+  server_name b128.net;
+  return 302 https://$server_name$request_uri;  # enforce https
+}
+
+server {
+  listen [::]:443 ssl;
+  ssl_certificate /etc/ssl/certs/b128.net.pem;
+  ssl_certificate_key /etc/ssl/private/b128.net.pem;
+
+  server_name b128.net;
+
+  access_log /var/www/default/log/access.log;
+  error_log /var/www/default/log/error.log warn;
+
+  root /var/www/default/htdocs;
+
+  index index.html;
+
+  add_header Cache-Control "public, max-age=3600";
+
+  location /static {
+    access_log off;
+    expires max;
+    add_header Cache-Control public;
+  }
+}
+
