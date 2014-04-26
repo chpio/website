@@ -114,12 +114,13 @@ echo "cjdns firewall up"
 <pre>
 sudo chmod u+x /etc/cjdns.firewall
 </pre>
-      Und führen diese anschließend aus, es sollte <em>cjdns firewall up</em> am Ende der Ausgabe erscheinen:
+      Und führen diese anschließend aus, es sollte <code>cjdns firewall up</code> am Ende der Ausgabe erscheinen:
 <pre>
 sudo /etc/cjdns.firewall
 </pre>
-      Jetzt ist unser Computer durch Zugriffe aus dem cjdns-Netz geschützt, aber nur bis zum nächsten Neustart. Wir wollen aber natürlich, dass der Rechner direkt nach dem Start
-      von der Firewall geschützt wird. Dazu erstellen wir ein Upstart-Script, diese platzieren wir unter <em>/etc/init/cjdns.firewall.conf</em>.
+      Jetzt ist unser Computer durch Zugriffe aus dem cjdns-Netz geschützt, aber nur bis zum nächsten Neustart, danach muss die Firewall manuell gestartet werden.
+      Wir wollen aber natürlich, dass der Rechner automatisch nach dem Start von der Firewall geschützt wird und wir uns nicht mehr darum kümmern müssen.
+      Dazu erstellen wir ein Upstart-Script, diese platzieren wir unter <em>/etc/init/cjdns.firewall.conf</em>.
 <pre>
 sudo gedit /etc/init/cjdns.firewall.conf
 </pre>
