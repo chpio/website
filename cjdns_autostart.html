@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <title>b128.net - cjdns automatisch starten</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="static/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutzerklaerung.html">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1>cjdns automatisch starten</h1>
+      <p>
+        Damit wir cjdns nicht jedes mal von Hand starten müssen, bringen wir einem Ubuntu-Rechner bei, wie er cjdns gleich beim Computerstart mit startet.
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <p>
+      Zu erst erstellen wir die Autostartdatei, da Ubuntu Upstart verwendet, befindet sich diese in dem Ordner <em>/etc/init</em>. Die Datei selbst wird <em>/etc/init/cjdns.conf</em> heißen.
+<pre>
+sudo gedit /etc/init/cjdns.conf
+</pre>
+      
+<pre>
+description "cjdns startup script"
+
+start on (local-filesystems and net-device-up IFACE!=lo)
+stop on runlevel [!2345]
+
+respawn
+respawn limit 2 300
+
+pre-start script
+  if ! [ -e /etc/cjdroute.conf ]
+  then
+    (
+      umask 077
+      /opt/cjdns/cjdroute --genconf > /etc/cjdroute.conf
+    )
+    echo 'WARNING: A new cjdns configuration file has been generated.'
+  fi
+  sed -i 's/"noBackground"\s*:\s*0/"noBackground":1/' /etc/cjdroute.conf
+end script
+
+exec /opt/cjdns/cjdroute &lt; /etc/cjdroute.conf
+</pre>
+      Sie sagt im Grunde nur, dass die ausführbare Datei <em>/opt/cjdns/cjdroute</em> mit der Datei <em>/etc/cjdroute.conf</em>
+      als Einstellungen gestartet wird, wenn die Startparameter (hier, das Dateisystem und ein Netzwerkgerät) vorhanden sind.
+      Gestoppt wird es, wenn der "normale" Betriebsmodus verlassen wird. Außerdem soll es neu gestartet werden, wenn es mal
+      Abstürzen sollte. Sollten noch keine Einstellungen erzeugt worden sein, wird das nachgeholt.
+    </p>
+    
+    <p>
+      Damit wird cjdns nicht nur automatisch gestartet, wir können es jetzt auch einfacher steuern:
+<pre>
+# Stoppen:
+sudo stop cjdns
+
+# Starten:
+sudo start cjdns
+
+# Den aktuellen Status abrufen:
+sudo status cjdns
+
+# Neustarten:
+sudo restart cjdns
+</pre>
+    </p>
+  </div>
+
+  <script src="static/js/jquery.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+</body>
+</html>
