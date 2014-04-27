@@ -20,6 +20,9 @@ server {
   root /var/www/default/htdocs;
 
   index index.html;
+  if ( $request_uri ~ "\/index\.html$" ) {
+    rewrite (.*)/ /$1 redirect;
+  }
 
   add_header Cache-Control "public, max-age=3600";
 
@@ -29,4 +32,3 @@ server {
     add_header Cache-Control public;
   }
 }
-
