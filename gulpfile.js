@@ -49,4 +49,13 @@ gulp.task('css',
   }
 );
 
+gulp.task('watch',
+  function()
+  {
+    gulp.watch("./src/content/**/*.html", ["html"]);
+    gulp.watch("./src/**/*.js", ["js"]);
+    gulp.watch("./src/**/*.css", ["css"]);
+  }
+);
+
 gulp.task('default', ['html', 'js', 'css']);
