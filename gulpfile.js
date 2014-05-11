@@ -49,13 +49,24 @@ gulp.task('css',
   }
 );
 
+gulp.task('misc',
+  function()
+  {
+    gulp.src('./src/misc/**')
+      .pipe(gulp.dest('./build'))
+      .pipe(gzip(gzipOptions))
+      .pipe(gulp.dest('./build'));
+  }
+);
+
 gulp.task('watch',
   function()
   {
     gulp.watch("./src/content/**/*.html", ["html"]);
     gulp.watch("./src/**/*.js", ["js"]);
     gulp.watch("./src/**/*.css", ["css"]);
+    gulp.watch("./src/misc/**/*", ["misc"]);
   }
 );
 
-gulp.task('default', ['html', 'js', 'css']);
+gulp.task('default', ['html', 'js', 'css', 'misc']);
