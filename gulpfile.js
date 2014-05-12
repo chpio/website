@@ -4,6 +4,7 @@ var minifyHTML = require('gulp-minify-html');
 var website = require('gulp-website');
 var concat = require('gulp-concat');
 var less = require('gulp-less');
+var rev = require('gulp-rev-mtime');
 
 var gzipOptions =
   {
@@ -21,6 +22,9 @@ gulp.task('html',
   {
     gulp.src('./src/content/**/*.html')
       .pipe(website())
+      .pipe(rev({
+          'cwd': './build'
+        }))
       .pipe(minifyHTML(minifyHTMLOptions))
       .pipe(gulp.dest('./build'))
       .pipe(gzip(gzipOptions))
