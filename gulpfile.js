@@ -27,10 +27,10 @@ gulp.task('html',
   }
 );
 
-gulp.task('js',
+gulp.task('script',
   function()
   {
-    gulp.src(['./src/static/js/jquery.min.js', './src/**/*.js'])
+    gulp.src(['./src/js/jquery.min.js', './src/js/**/*.js'])
       .pipe(concat('all.js'))
       .pipe(gulp.dest('./build/static'))
       .pipe(gzip(gzipOptions))
@@ -38,10 +38,10 @@ gulp.task('js',
   }
 );
 
-gulp.task('css',
+gulp.task('style',
   function()
   {
-    gulp.src('./src/**/*.css')
+    gulp.src('./src/css/**/*.css')
       .pipe(concat('all.css'))
       .pipe(gulp.dest('./build/static'))
       .pipe(gzip(gzipOptions))
@@ -49,10 +49,10 @@ gulp.task('css',
   }
 );
 
-gulp.task('misc',
+gulp.task('root-static',
   function()
   {
-    gulp.src('./src/misc/**')
+    gulp.src('./src/root-static/**')
       .pipe(gulp.dest('./build'))
       .pipe(gzip(gzipOptions))
       .pipe(gulp.dest('./build'));
@@ -63,10 +63,10 @@ gulp.task('watch',
   function()
   {
     gulp.watch("./src/content/**/*.html", ["html"]);
-    gulp.watch("./src/**/*.js", ["js"]);
-    gulp.watch("./src/**/*.css", ["css"]);
-    gulp.watch("./src/misc/**/*", ["misc"]);
+    gulp.watch("./src/**/*.js", ["script"]);
+    gulp.watch("./src/**/*.css", ["style"]);
+    gulp.watch("./src/misc/**/*", ["root-static"]);
   }
 );
 
-gulp.task('default', ['html', 'js', 'css', 'misc']);
+gulp.task('default', ['html', 'script', 'style', 'root-static']);
