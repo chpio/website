@@ -18,27 +18,27 @@
           <span class="icon-bar"></span>
         </button>
       </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <% for(var k in menu) { var menuEntry = menu[k]; %>
-            <li class="<% if( menuEntry.link == meta.id ) { %>active<% } %>">
-              <a href="<%= menuEntry.linkUrl %>"><%= menuEntry.title %></a>
-              <% if( menuEntry.menu ) { %>
-                <ul class="nav sub-level">
-                  <% for(var subK in menuEntry.menu) { var subMenuEntry = menuEntry.menu[subK]; %>
-                    <li <% if( subMenuEntry.link == meta.id ) { %>class="active"<% } %>>
-                      <a href="<%= subMenuEntry.linkUrl %>"><%= subMenuEntry.title %></a>
-                    </li>
-                  <% } %>
-                </ul>
-              <% } %>
-            </li>
-          <% } %>
-        </ul>
-      </div>
+      <% for(var mk in menus) { var menu = menus[mk]; %>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <% for(var k in menu) { var menuEntry = menu[k]; %>
+              <li class="<% if( menuEntry.active ) { %>active<% } %>">
+                <a href="<%= menuEntry.linkUrl %>">
+                  <%= menuEntry.title %>
+                  <% if( menuEntry.isFolder ) { %><span class="caret"></span><% } %>
+                </a>
+              </li>
+            <% } %>
+          </ul>
+        </div>
+      <% } %>
     </div>
   </div>
   <%- contents %>
+  <div class="container">
+    <hr />
+    <a href="impressum.html">Impressum</a> - <a href="datenschutzerklaerung.html">Datenschutzerklärung</a>
+  </div>
   <script src="static/script.js"></script>
 </body>
 </html>
