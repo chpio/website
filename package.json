@@ -5,9 +5,9 @@
     "gulp": "~3.6.2",
     "gulp-gzip": "0.0.8",
     "gulp-minify-html": "~0.1.3",
-    "gulp-website": "0.0.1",
+    "gulp-website-builder": "git://github.com/t128/gulp-website-builder.git",
     "gulp-concat": "~2.2.0",
     "gulp-less": "1.2.3",
-    "gulp-rev-mtime": "0.0.3"
+    "gulp-rev-mtime": "git://github.com/t128/gulp-rev-mtime.git"
   }
 }

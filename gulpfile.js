@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var gzip = require('gulp-gzip');
 var minifyHTML = require('gulp-minify-html');
-var website = require('gulp-website');
+var website = require('gulp-website-builder');
 var concat = require('gulp-concat');
 var less = require('gulp-less');
 var rev = require('gulp-rev-mtime');
@@ -17,13 +17,13 @@ var minifyHTMLOptions =
   };
 
 
-gulp.task('html',
+gulp.task('html', ['script', 'style'],
   function()
   {
-    gulp.src('./src/content/**/*.html')
+    return gulp.src('./src/content/**/*.html')
       .pipe(website())
       .pipe(rev({
-          'cwd': './build'
+         'cwd': './build'
         }))
       .pipe(minifyHTML(minifyHTMLOptions))
       .pipe(gulp.dest('./build'))
@@ -35,7 +35,7 @@ gulp.task('html',
 gulp.task('script',
   function()
   {
-    gulp.src(['./src/js/jquery.min.js', './src/js/**/*.js'])
+    return gulp.src(['./src/js/jquery.min.js', './src/js/**/*.js'])
       .pipe(concat('script.js'))
       .pipe(gulp.dest('./build/static'))
       .pipe(gzip(gzipOptions))
@@ -46,7 +46,7 @@ gulp.task('script',
 gulp.task('style',
   function()
   {
-    gulp.src('./src/less/style.less')
+    return gulp.src('./src/less/style.less')
       .pipe(less({
           compress: true
         }))
@@ -59,7 +59,7 @@ gulp.task('style',
 gulp.task('root-static',
   function()
   {
-    gulp.src('./src/root-static/**')
+    return gulp.src('./src/root-static/**')
       .pipe(gulp.dest('./build'))
       .pipe(gzip(gzipOptions))
       .pipe(gulp.dest('./build'));
@@ -69,11 +69,9 @@ gulp.task('root-static',
 gulp.task('watch',
   function()
   {
-    gulp.watch("./src/content/**/*.html", ["html"]);
-    gulp.watch("./src/**/*.js", ["script", "html"]);
-    gulp.watch("./src/**/*.css", ["style", "html"]);
+    gulp.watch(["./src/content/**/*.html", "./src/**/*.js", "./src/**/*.less"], ["html"]);
     gulp.watch("./src/misc/**/*", ["root-static"]);
   }
 );
 
-gulp.task('default', ['script', 'style', 'root-static', 'html']);
+gulp.task('default', ['root-static', 'html']);
