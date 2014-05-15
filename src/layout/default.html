@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="static/style.css" rel="stylesheet">
+  <link href="<%= h.urlTo("static/style.css") %>" rel="stylesheet">
 </head>
 <body>
   <div class="navbar navbar-default navbar-static-top" role="navigation">
@@ -23,7 +23,7 @@
           <ul class="nav navbar-nav">
             <% for(var k in menu) { var menuEntry = menu[k]; %>
               <li class="<% if( menuEntry.active ) { %>active<% } %>">
-                <a href="<%= menuEntry.linkUrl %>">
+                <a href="<%= h.urlTo(menuEntry.linkUrl) %>">
                   <%= menuEntry.title %>
                   <% if( menuEntry.isFolder ) { %><span class="caret"></span><% } %>
                 </a>
@@ -39,6 +39,6 @@
     <hr />
     <a href="impressum.html">Impressum</a> - <a href="datenschutzerklaerung.html">Datenschutzerklärung</a>
   </div>
-  <script src="static/script.js"></script>
+  <script src="<%= h.urlTo("static/script.js") %>"></script>
 </body>
 </html>
