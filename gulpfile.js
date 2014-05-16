@@ -21,7 +21,7 @@ gulp.task('html', ['script', 'style'],
   function()
   {
     return gulp.src('./src/content/**/*.html')
-      .pipe(website())
+      .pipe(website({layoutDir: "./src/layout"}))
       .pipe(rev({
          'cwd': './build'
         }))
