@@ -6,12 +6,13 @@ var concat = require('gulp-concat');
 var less = require('gulp-less');
 var rev = require('gulp-rev-mtime');
 var rimraf = require('rimraf');
+var streamqueue = require('streamqueue');
 
 var gzipOptions =
   {
     gzipOptions: { level: 9 },
   };
-  
+
 var minifyHTMLOptions =
   {
     conditionals: true,
@@ -51,12 +52,18 @@ gulp.task('style', ['clean'],
 gulp.task('default', ['script', 'style'],
   function()
   {
-    return gulp.src('./content/**/*.html')
-      .pipe(website()).html
-      .pipe(rev({
-         'cwd': './build'
-        }))
-      .pipe(minifyHTML(minifyHTMLOptions))
+    var website = gulp.src('./content/**/*.html')
+      .pipe(website());
+
+    return streamqueue(
+        website.html
+          .pipe(rev({
+           'cwd': './build'
+          }))
+          .pipe(minifyHTML(minifyHTMLOptions)),
+        website.sitemap,
+        website.robots
+      )
       .pipe(gulp.dest('./build'))
       .pipe(gzip(gzipOptions))
       .pipe(gulp.dest('./build'));
