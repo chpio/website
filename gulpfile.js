@@ -5,6 +5,7 @@ var website = require('gulp-website-builder');
 var concat = require('gulp-concat');
 var less = require('gulp-less');
 var rev = require('gulp-rev-mtime');
+var rimraf = require('rimraf');
 
 var gzipOptions =
   {
@@ -38,7 +39,7 @@ gulp.task('html', ['script', 'style'],
   }
 );
 
-gulp.task('script',
+gulp.task('script', ['clean'],
   function()
   {
     return gulp.src(['./src/js/jquery.min.js', './src/js/**/*.js'])
@@ -49,7 +50,7 @@ gulp.task('script',
   }
 );
 
-gulp.task('style',
+gulp.task('style', ['clean'],
   function()
   {
     return gulp.src('./src/less/style.less')
@@ -62,7 +63,7 @@ gulp.task('style',
   }
 );
 
-gulp.task('root-static',
+gulp.task('root-static', ['clean'],
   function()
   {
     return gulp.src('./src/root-static/**')

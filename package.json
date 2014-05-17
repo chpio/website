@@ -8,6 +8,7 @@
     "gulp-website-builder": "git://github.com/t128/gulp-website-builder.git",
     "gulp-concat": "~2.2.0",
     "gulp-less": "1.2.3",
-    "gulp-rev-mtime": "git://github.com/t128/gulp-rev-mtime.git"
+    "gulp-rev-mtime": "git://github.com/t128/gulp-rev-mtime.git",
+    "rimraf": "~2.2.8"
   }
 }
