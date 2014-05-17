@@ -16,12 +16,18 @@ var minifyHTMLOptions =
     conditionals: true,
   };
 
+gulp.task('clean',
+  function(callback)
+  {
+    rimraf("./build", callback);
+  }
+);
 
 gulp.task('html', ['script', 'style'],
   function()
   {
     return gulp.src('./src/content/**/*.html')
-      .pipe(website({layoutDir: "./src/layout"}))
+      .pipe(website({layoutDir: "./src/layout"})).html
       .pipe(rev({
          'cwd': './build'
         }))
