@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <title>b128.net - <%= d.title %></title>
+  <title>b128.net <% h.rootToPage(page).forEach(function(curPage){ %> - <%= curPage.data.title %><% }) %></title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,20 +18,34 @@
           <span class="icon-bar"></span>
         </button>
       </div>
-      <% for(var mk in menus) { var menu = menus[mk]; %>
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <% pages.forEach(function(curPage) { %>
+            <li class="<% if( h.isActive(curPage) ) { %>active<% } %>">
+              <a href="<%= h.urlTo(curPage) %>">
+                <%= curPage.data.title %>
+                <% if( 0 < curPage.childPages.length ) { %><span class="caret"></span><% } %>
+              </a>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+
+      <% h.rootToPage(page).forEach(function(curPage) { %>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <% for(var k in menu) { var menuEntry = menu[k]; %>
-              <li class="<% if( menuEntry.active ) { %>active<% } %>">
-                <a href="<%= h.urlTo(menuEntry.linkUrl) %>">
-                  <%= menuEntry.title %>
-                  <% if( menuEntry.isFolder ) { %><span class="caret"></span><% } %>
+            <% curPage.childPages.forEach(function(childPage) { %>
+              <li class="<% if( h.isActive(childPage) ) { %>active<% } %>">
+                <a href="<%= h.urlTo(childPage) %>">
+                  <%= childPage.data.title %>
+                  <% if( 0 < childPage.childPages.length ) { %><span class="caret"></span><% } %>
                 </a>
               </li>
-            <% } %>
+            <% }) %>
           </ul>
         </div>
-      <% } %>
+      <% }) %>
     </div>
   </div>
   <%- contents %>

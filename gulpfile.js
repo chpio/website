@@ -52,17 +52,18 @@ gulp.task('style', ['clean'],
 gulp.task('default', ['script', 'style'],
   function()
   {
-    var website = gulp.src('./content/**/*.html')
+    var ws = gulp.src('./content/**/*.html')
       .pipe(website());
 
     return streamqueue(
-        website.html
+        {objectMode: true},
+        ws.html
           .pipe(rev({
            'cwd': './build'
           }))
           .pipe(minifyHTML(minifyHTMLOptions)),
-        website.sitemap,
-        website.robots
+        ws.sitemap,
+        ws.robots
       )
       .pipe(gulp.dest('./build'))
       .pipe(gzip(gzipOptions))
