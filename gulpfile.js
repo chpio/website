@@ -53,7 +53,7 @@ gulp.task('default', ['script', 'style'],
   function()
   {
     var ws = gulp.src('./content/**/*.html')
-      .pipe(website());
+      .pipe(website({websiteUrl: 'https://b128.net/'}));
 
     return streamqueue(
         {objectMode: true},
