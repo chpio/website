@@ -4,18 +4,12 @@ var minifyHTML = require('gulp-minify-html');
 var website = require('gulp-website-builder');
 var concat = require('gulp-concat');
 var less = require('gulp-less');
-var rev = require('gulp-rev-mtime');
 var rimraf = require('rimraf');
 var streamqueue = require('streamqueue');
 
 var gzipOptions =
   {
     gzipOptions: { level: 9 },
-  };
-
-var minifyHTMLOptions =
-  {
-    conditionals: true,
   };
 
 gulp.task('clean',
@@ -58,10 +52,9 @@ gulp.task('default', ['script', 'style'],
     return streamqueue(
         {objectMode: true},
         ws.html
-          .pipe(rev({
-           'cwd': './build'
-          }))
-          .pipe(minifyHTML(minifyHTMLOptions)),
+          .pipe(minifyHTML({
+            conditionals: true,
+          })),
         ws.sitemap,
         ws.robots
       )
