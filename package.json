@@ -8,6 +8,7 @@
     "gulp-concat": "~2.2.0",
     "gulp-less": "~1.2.3",
     "rimraf": "~2.2.8",
-    "streamqueue": "0.0.7"
+    "streamqueue": "0.0.7",
+    "marked": "~0.3.2"
   }
 }

@@ -6,6 +6,7 @@ var concat = require('gulp-concat');
 var less = require('gulp-less');
 var rimraf = require('rimraf');
 var streamqueue = require('streamqueue');
+var marked = require('marked');
 
 var gzipOptions =
   {
@@ -47,13 +48,20 @@ gulp.task('default', ['script', 'style'],
   function()
   {
     var ws = gulp.src('./content/**/*.html')
-      .pipe(website({websiteUrl: 'https://b128.net/'}));
+      .pipe(website({
+        websiteUrl: 'https://b128.net/',
+        contentHandler: function(content, args) {
+          if( args.d.markdown )
+            return marked(content);
+          return content;
+        }
+      }));
 
     return streamqueue(
         {objectMode: true},
         ws.html
           .pipe(minifyHTML({
-            conditionals: true,
+            conditionals: true
           })),
         ws.sitemap,
         ws.robots
