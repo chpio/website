@@ -7,6 +7,13 @@ var less = require('gulp-less');
 var rimraf = require('rimraf');
 var streamqueue = require('streamqueue');
 var marked = require('marked');
+var highlight = require('highlight.js');
+
+marked.setOptions({
+  highlight: function(code, lang, callback) {
+    return lang ? highlight.highlight(lang, code).value : highlight.highlightAuto(code).value;
+  }
+});
 
 var gzipOptions =
   {
@@ -47,22 +54,20 @@ gulp.task('style', ['clean'],
 gulp.task('default', ['script', 'style'],
   function()
   {
-    var ws = gulp.src('./content/**/*.html')
+    var ws = gulp.src('./content/**/*.md')
       .pipe(website({
         websiteUrl: 'https://b128.net/',
         contentHandler: function(content, args) {
-          if( args.d.markdown )
-            return marked(content);
-          return content;
+          return marked(content);
         }
       }));
 
     return streamqueue(
         {objectMode: true},
         ws.html
-          .pipe(minifyHTML({
+        /*.pipe(minifyHTML({
             conditionals: true
-          })),
+          }))*/,
         ws.sitemap,
         ws.robots
       )
@@ -75,6 +80,6 @@ gulp.task('default', ['script', 'style'],
 gulp.task('watch',
   function()
   {
-    gulp.watch(["./content/**/*.html", "./js/**/*.js", "./less/**/*.less"], ["default"]);
+    gulp.watch(["./content/**/*.md", "./js/**/*.js", "./less/**/*.less", "./layout/**/*.html"], ["default"]);
   }
 );

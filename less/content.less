@@ -1,0 +1,79 @@
+#content {
+  max-width: @screen-lg-min;
+  margin: 0 auto;
+
+  h1 {
+    border-bottom: 1px solid #bbb;
+  }
+
+  h2 {
+    border-bottom: 1px solid #ddd;
+  }
+
+  p {
+    text-align: justify;
+    hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+  }
+
+  :not(pre) code,
+  pre {
+    padding: 3px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #eee;
+  }
+
+  @media all and (min-width: @screen-sm-min) {
+    .float-left {
+      width: @content-floated-width;
+      float: left;
+      margin-right: 10px;
+    }
+
+    .float-right {
+      width: @content-floated-width;
+      float: right;
+      margin-left: 10px;
+    }
+  }
+
+  .caption {
+    text-align: right;
+    font-size: 0.8em;
+  }
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+
+    &.youtube {
+      padding-top: 27px;
+    }
+
+    iframe,
+    object,
+    embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      border: 0px none transparent;
+      padding: 0px;
+      overflow: hidden;
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    clear: both;
+  }
+}
+

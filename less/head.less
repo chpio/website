@@ -1,0 +1,34 @@
+#head-wrapper {
+  box-shadow: 0 4px 2px -2px rgba(51, 51, 51, 0.25);
+  padding: 10px 0;
+}
+
+#head {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li a {
+      padding: 5px;
+      display: inline-block;
+    }
+
+    li.active a {
+      color: #f00;
+    }
+
+    .clear-fix();
+  }
+
+
+  @media all and (min-width: @screen-sm-min) {
+    margin: 0 auto;
+    max-width: @screen-lg-min;
+
+    li {
+      float: left;
+    }
+  }
+}
+
