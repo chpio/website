@@ -62,6 +62,10 @@ Konkurrenz kann sich nicht bilden, ohne Konkurrenz kommt es zu keinen Umsetzunge
 
 ## ein Netzwerk in Bürgerhand
 
+Nur eine <a href="https://de.wikipedia.org/wiki/Vermaschtes_Netz">dezentrale</a> Netzwerkstruktur kann gegen die oben genannten Gründe etwas ausrichten.
+Das deutsche Projekt [Freifunk](http://freifunk.net/) stellt dazu offene W-Lan Zugangspunkte bereit. An diesen kann man sich in das Freifunk Netzwerk einbuchen.
+Das Netzwerk besteht aus vielen, vermaschten W-Lan Punkten, die miteinander verbunden sind. Sie werden von Freiwilligen betrieben.
+
 <div class="float-right">
   <div class="video-container youtube">
     <object>
@@ -73,10 +77,6 @@ Konkurrenz kann sich nicht bilden, ohne Konkurrenz kommt es zu keinen Umsetzunge
   </div>
   <div class="caption">Video von <a href="https://www.youtube.com/user/ArcanisLupus">ArcanisLupus</a></div>
 </div>
-
-Nur eine <a href="https://de.wikipedia.org/wiki/Vermaschtes_Netz">dezentrale</a> Netzwerkstruktur kann gegen die oben genannten Gründe etwas ausrichten.
-Das deutsche Projekt [Freifunk](http://freifunk.net/) stellt dazu offene W-Lan Zugangspunkte bereit. An diesen kann man sich in das Freifunk Netzwerk einbuchen.
-Das Netzwerk besteht aus vielen, vermaschten W-Lan Punkten, die miteinander verbunden sind. Sie werden von Freiwilligen betrieben.
 
 Die opensource Software [cjdns](https://github.com/cjdelisle/cjdns/blob/master/README.md) geht einen ähnlichen Ansatz. Diese bietet aber einige Vorzügen gegenüber
 der von Freifunk eingesetzten Software an. So werden die übertragenden Daten beim Abschicken von dem Sender verschlüsselt und können nur von dem Empfänger wieder
