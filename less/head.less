@@ -15,7 +15,7 @@
     }
 
     li.active a {
-      color: #f00;
+      .link-hover();
     }
 
     li.has-children a:hover,
@@ -30,7 +30,7 @@
       	height: 0;
       	border-left: 4px solid transparent;
       	border-right: 4px solid transparent;
-      	border-top: 8px solid #f00;
+      	border-top: 8px solid #0095dd;
       }
     }
 
@@ -38,9 +38,10 @@
   }
 
   ul + ul {
-    margin-top: 10px;
+    border-top: 1px solid #bbb;
+    margin-top: 5px;
+    padding-top: 5px;
   }
-
 
   @media all and (min-width: @screen-sm-min) {
     margin: 0 auto;
