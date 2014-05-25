@@ -24,13 +24,15 @@
       </ul>
 
       <% h.rootToPage(page).forEach(function(curPage) { %>
-        <ul class="subnav">
-          <% curPage.childPages.forEach(function(childPage) { %>
-            <li class="<% if( h.isActive(childPage) ) { %>active<% } %><% if( 0 < childPage.childPages.length ) { %> has-children<% } %>">
-              <a href="<%= h.urlTo(childPage) %>"><%= childPage.data.title %></a>
-            </li>
-          <% }) %>
-        </ul>
+        <% if( curPage.childPages.length ) { %>
+          <ul class="subnav">
+            <% curPage.childPages.forEach(function(childPage) { %>
+              <li class="<% if( h.isActive(childPage) ) { %>active<% } %><% if( 0 < childPage.childPages.length ) { %> has-children<% } %>">
+                <a href="<%= h.urlTo(childPage) %>"><%= childPage.data.title %></a>
+              </li>
+            <% }) %>
+          </ul>
+        <% } %>
       <% }) %>
     </div>
   </div>
