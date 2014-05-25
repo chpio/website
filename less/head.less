@@ -18,6 +18,22 @@
       color: #f00;
     }
 
+    li.has-children a:hover,
+    li.has-children.active a {
+      padding: 5px 5px 5px 15px;
+
+      &:after {
+        content: "";
+        display: inline-block;
+        margin-left: 2px;
+      	width: 0;
+      	height: 0;
+      	border-left: 4px solid transparent;
+      	border-right: 4px solid transparent;
+      	border-top: 8px solid #f00;
+      }
+    }
+
     .clear-fix();
   }
 
