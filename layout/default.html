@@ -5,10 +5,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <% if( d.meta && typeof(d.meta) === "object" ) { %>
-    <% for(var key in d.meta) { %>
-      <meta name="<%= key %>" content="<%= d.meta[key] %>" />
-    <% } %>
+  <% for(var key in d.meta) { %>
+    <meta name="<%= key %>" content="<%= d.meta[key] %>" />
   <% } %>
   <link href="<%= h.urlTo("static/style.css") %>" rel="stylesheet">
 </head>
