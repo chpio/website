@@ -14,11 +14,6 @@ marked.setOptions({
   }
 });
 
-var gzipOptions =
-  {
-    gzipOptions: { level: 9 },
-  };
-
 gulp.task('clean',
   function(callback)
   {
@@ -26,7 +21,15 @@ gulp.task('clean',
   }
 );
 
-gulp.task('style', ['clean'],
+gulp.task('compress', function() {
+  return gulp.src('./build/**/*')
+    .pipe(gzip({
+      gzipOptions: { level: 9 },
+    }))
+    .pipe(gulp.dest('./build'));
+});
+
+gulp.task('style',
   function()
   {
     return gulp.src('./less/style.less')
@@ -34,12 +37,10 @@ gulp.task('style', ['clean'],
           compress: true
         }))
       .pipe(gulp.dest('./build/static'))
-      .pipe(gzip(gzipOptions))
-      .pipe(gulp.dest('./build/static'));
   }
 );
 
-gulp.task('default', ['style'],
+gulp.task('html',
   function()
   {
     var ws = gulp.src('./content/**/*.md')
@@ -59,15 +60,16 @@ gulp.task('default', ['style'],
         ws.sitemap,
         ws.robots
       )
-      .pipe(gulp.dest('./build'))
-      .pipe(gzip(gzipOptions))
       .pipe(gulp.dest('./build'));
   }
 );
 
+gulp.task('default', ['style', 'html']);
+
 gulp.task('watch',
   function()
   {
-    gulp.watch(["./content/**/*.md", "./less/**/*.less", "./layout/**/*.html"], ["default"]);
+    gulp.watch(["./less/**/*.less"], ["style"]);
+    gulp.watch(["./content/**/*.md", "./layout/**/*.html"], ["html"]);
   }
 );
