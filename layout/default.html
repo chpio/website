@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <title>b128.net <% h.rootToPage(page).forEach(function(curPage){ %> - <%= curPage.data.title %><% }) %></title>
+  <%
+  var breadCrumbs = page.getParents();
+  breadCrumbs.push(page);
+  %>
+  <title><%= breadCrumbs.map(utils.getData).map(utils.getTitle).join(" - ") %></title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <% for(var key in d.meta) { %>
     <meta name="<%= key %>" content="<%= d.meta[key] %>" />
   <% } %>
-  <link href="<%= h.urlTo("static/style.css") %>" rel="stylesheet">
+  <link href="<%= page.getUrl("static/style.css") %>" rel="stylesheet">
 </head>
 <body>
   <div id="head-wrapper">
     <div id="head">
       <ul>
-        <% pages.forEach(function(curPage) { %>
-          <li class="<% if( h.isActive(curPage) ) { %>active<% } %><% if( 0 < curPage.childPages.length ) { %> has-children<% } %>">
-            <a href="<%= h.urlTo(curPage) %>"><%= curPage.data.title %></a>
+        <li class="<% if( page === root ) { %>active<% } %>">
+          <a href="<%= page.getUrl(root) %>">Startseite</a>
+        </li>
+        <% root.getChildren().forEach(function(p) { %>
+          <li class="<% if( page.isActive(p) ) { %>active<% } %><% if( 0 < p.children.length ) { %> has-children<% } %>">
+            <a href="<%= page.getUrl(p) %>"><%= p.data.title %></a>
           </li>
         <% }) %>
       </ul>
 
-      <% h.rootToPage(page).forEach(function(curPage) { %>
-        <% if( curPage.childPages.length ) { %>
+      <%
+      var subMenues = page.getParents().slice(1);
+      if( page.isIndex && page != root )
+        subMenues.push(page);
+      %>
+      <% subMenues.forEach(function(p) { %>
+        <% if( p.children.length ) { %>
           <ul class="subnav">
-            <% curPage.childPages.forEach(function(childPage) { %>
-              <li class="<% if( h.isActive(childPage) ) { %>active<% } %><% if( 0 < childPage.childPages.length ) { %> has-children<% } %>">
-                <a href="<%= h.urlTo(childPage) %>"><%= childPage.data.title %></a>
+            <% p.getChildren().forEach(function(childP) { %>
+              <li class="<% if( page.isActive(childP) ) { %>active<% } %><% if( 0 < childP.children.length ) { %> has-children<% } %>">
+                <a href="<%= page.getUrl(childP) %>"><%= childP.data.title %></a>
               </li>
             <% }) %>
           </ul>
@@ -41,7 +53,7 @@
 
   <div id="foot-wrapper">
     <div id="foot">
-      <a href="<%= h.urlTo("impressum.html") %>">Impressum</a> - <a href="<%= h.urlTo("datenschutzerklaerung.html") %>">Datenschutzerklärung</a>
+      <a href="<%= page.getUrl("page:/impressum") %>">Impressum</a> - <a href="<%= page.getUrl("page:/datenschutzerklaerung") %>">Datenschutzerklärung</a>
     </div>
   </div>
 
