@@ -7,12 +7,7 @@
 
 <div class="float-right">
   <div class="video-container youtube">
-    <object>
-      <param name="movie" value="https://www.youtube-nocookie.com/v/iHlzsURb0WI?rel=0"></param>
-      <param name="allowFullScreen" value="true"></param>
-      <param name="allowscriptaccess" value="always"></param>
-      <embed src="https://www.youtube-nocookie.com/v/iHlzsURb0WI?rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed>
-    </object>
+    <iframe src="https://www.youtube-nocookie.com/embed/iHlzsURb0WI?rel=0" allowfullscreen></iframe>
   </div>
   <div class="caption">Video von <a href="https://www.youtube.com/user/manniacmind">manniac</a></div>
 </div>
@@ -37,12 +32,7 @@ kann eine Filterung und Überwachung der durchgeleiteten Daten stattfinden.
 
 <div class="float-right">
   <div class="video-container youtube">
-    <object>
-      <param name="movie" value="https://www.youtube-nocookie.com/v/AQTkUhjVUf4?rel=0"></param>
-      <param name="allowFullScreen" value="true"></param>
-      <param name="allowscriptaccess" value="always"></param>
-      <embed src="https://www.youtube-nocookie.com/v/AQTkUhjVUf4?rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed>
-    </object>
+    <iframe src="https://www.youtube-nocookie.com/embed/AQTkUhjVUf4?rel=0" allowfullscreen></iframe>
   </div>
   <div class="caption">Video von <a href="https://www.youtube.com/user/alexanderlehmann">Alexander Lehmann</a></div>
 </div>
@@ -68,12 +58,7 @@ Das Netzwerk besteht aus vielen, vermaschten W-Lan Punkten, die miteinander verb
 
 <div class="float-right">
   <div class="video-container youtube">
-    <object>
-      <param name="movie" value="https://www.youtube-nocookie.com/v/cK73sYM3g0Q?rel=0"></param>
-      <param name="allowFullScreen" value="true"></param>
-      <param name="allowscriptaccess" value="always"></param>
-      <embed src="https://www.youtube-nocookie.com/v/cK73sYM3g0Q?rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed>
-    </object>
+    <iframe src="https://www.youtube-nocookie.com/embed/cK73sYM3g0Q?rel=0" allowfullscreen></iframe>
   </div>
   <div class="caption">Video von <a href="https://www.youtube.com/user/ArcanisLupus">ArcanisLupus</a></div>
 </div>
