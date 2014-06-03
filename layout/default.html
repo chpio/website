@@ -15,8 +15,8 @@
   <link href="<%= page.getUrl("static/style.css") %>" rel="stylesheet">
 </head>
 <body>
-  <div id="head-wrapper">
-    <div id="head">
+  <div id="header-wrapper">
+    <header>
       <ul>
         <li class="<% if( page === root ) { %>active<% } %>">
           <a href="<%= page.getUrl(root) %>">Startseite</a>
@@ -44,17 +44,17 @@
           </ul>
         <% } %>
       <% }) %>
-    </div>
+    </header>
   </div>
 
   <div id="content">
     <%- contents %>
   </div>
 
-  <div id="foot-wrapper">
-    <div id="foot">
+  <div id="footer-wrapper">
+    <footer>
       <a href="<%= page.getUrl("page:/impressum") %>">Impressum</a> - <a href="<%= page.getUrl("page:/datenschutzerklaerung") %>">Datenschutzerklärung</a>
-    </div>
+    </footer>
   </div>
 
 </body>
