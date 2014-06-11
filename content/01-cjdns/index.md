@@ -40,21 +40,23 @@ kann eine Filterung und Überwachung der durchgeleiteten Daten stattfinden.
 Internetdienstanbieter sind Unternehmen, als solche sind sie bemüht einen möglichst hohen Gewinn aus jeder Unternehmenstätigkeit zu erhalten, auch vor unmoralischen
 Versuchen der Gewinnmaximierung machen sie nicht Halt.
 
-In einem normalen Netzwerk jeder  Teilnehmer Datenpakete senden und empfangen. Das Netzwerk macht keine Unterscheidung zwischen den Teilnehmern. Dem Netz ist
-es egal wer wem etwas schickt, es überträgt nur Datenpakete.
+Normalerweise wird die Netzneutralität in einem Netzwerk beachtet, das heißt dass alle Teilnehmer ungehindert Daten austauschen können. Das Netzwerk
+macht dabei keine Unterscheidung zwischen den Teilnehmern, so wird jeder gleich behandelt.
 
-Die Internetdienstanbieter versuchen nun durch den Aufbau einer "Bezahlschranke" ihre Profite zu erhöhen. Die Netzteilnehmer, die Geld dafür ausgeben, werden
-bevorzugt behandelt, für die Anderen bleibt dafür weniger Bandbreite übrig.
-Dabei kommt es aber auch unweigerlich dazu, dass einige Teilnehmer nicht imstande sind diese Kosten an die Internetanbietern zu entrichten.
+Die Internetdienstanbieter versuchen, durch das Einrichten einer künstlichen Priorisierung bestimmter Teilnehmer, ihre Profite zu erhöhen.
+Die Netzteilnehmer, die Geld bezahlen, werden bevorzugt behandelt. Da die Bandbreite begrenzt ist, bleibt für die Anderen weniger möglicher Bandbreite übrig.
+
+Dabei kommt es aber auch unweigerlich dazu, dass einige Teilnehmer nicht imstande sind diese Kosten zu entrichten, dazu können zum Beispiel Startups zählen.
 Es findet eine Unterteilung des Internets in verschiedene Klassen, eine Klasse für die "lahmen" nicht-Zahler und
-eines für die "Premium"-Kunden. Unter diesen Umständen schrumpft das Angebot immer weiter, es bleiben nur noch die zahlenden Kunden. Neue
+eines für die "Premium"-Teilnehmer. Unter diesen Umständen schrumpft das Angebot immer weiter, es bleiben nur noch die Zahlenden. Neue
 Konkurrenz kann sich nicht bilden, ohne Konkurrenz kommt es zu keinen Umsetzungen von neuen Ideen und Innovation bleibt außen vor.
 
 ## ein Netzwerk in Bürgerhand
 
-Nur eine <a href="https://de.wikipedia.org/wiki/Vermaschtes_Netz">dezentrale</a> Netzwerkstruktur kann gegen die oben genannten Gründe etwas ausrichten.
-Das deutsche Projekt [Freifunk](http://freifunk.net/) stellt dazu offene W-Lan Zugangspunkte bereit. An diesen kann man sich in das Freifunk Netzwerk einbuchen.
-Das Netzwerk besteht aus vielen, vermaschten W-Lan Punkten, die miteinander verbunden sind. Sie werden von Freiwilligen betrieben.
+Nur eine [dezentrale](https://de.wikipedia.org/wiki/Vermaschtes_Netz) Netzwerkstruktur kann gegen die oben genannten Fehler etwas ausrichten.
+Das in Deutschland gegründete Projekt [Freifunk](http://freifunk.net/) stellt dazu offene W-Lan Zugangspunkte bereit.
+An diesen kann man sich in das Freifunk Netzwerk einbuchen.
+Das Netzwerk besteht aus vielen, vermaschten W-Lan Punkten, die miteinander verbunden sind. Diese werden meist von Freiwilligen unentgeltlich betrieben.
 
 <div class="float-right">
   <div class="video-container youtube">
@@ -65,20 +67,17 @@ Das Netzwerk besteht aus vielen, vermaschten W-Lan Punkten, die miteinander verb
 
 Die opensource Software [cjdns](https://github.com/cjdelisle/cjdns/blob/master/README.md) geht einen ähnlichen Ansatz. Diese bietet aber einige Vorzügen gegenüber
 der von Freifunk eingesetzten Software an. So werden die übertragenden Daten beim Abschicken von dem Sender verschlüsselt und können nur von dem Empfänger wieder
-entschlüsselt (genannt [Ende-zu-Ende-Verschlüsselung](https://de.wikipedia.org/wiki/Ende-zu-Ende-Verschl%C3%BCsselung)) werden. Zusätzlich wird jede Verbindung
-mit einem temporären Schlüssel gesichert, dieser wird nur eine kurze Zeit lang verwendet. Gelangt dieser kurzlebige Schlüssel in die Hände von Dritten, können
-diese nur den entsprechenden kleinen Teil der Kommunikation entschlüsseln, die Restliche Kommunikation bleibt unangetastet
-([Perfect Forward Secrecy](https://de.wikipedia.org/wiki/Perfect_Forward_Secrecy)).
+entschlüsselt (genannt [Ende-zu-Ende-Verschlüsselung](https://de.wikipedia.org/wiki/Ende-zu-Ende-Verschl%C3%BCsselung)) werden.
 
 Cjdns hat einen weiteren Vorteil, es muss nämlich nicht oder nur geringfügig konfiguriert werden. Einmal eingerichtet findet es den schnellsten und kürzesten
 Weg von alleine. Hierfür wird das Routing einer [verteilten Hashtabelle](https://de.wikipedia.org/wiki/Verteilte_Hashtabelle) verwendet.
 
 Für die Kommunikation wird [IPv6](https://de.wikipedia.org/wiki/Ipv6) eingesetzt. Das bedeutet, dass die vorhandene Software nicht extra an cjdns angepasst werden
-muss. Da es einen Standard verwendet, den die meiste Software heutzutage schon nutzen.
+muss. Da es einen Standard verwendet, den die meiste Software heutzutage schon beherrschen.
 
 Um Missverständnisse gegenüber cjdns nicht aufkommen zulassen, muss noch erwähnt werden, dass cjdns kein vollständiges "Darknet" ist, auch wenn es im Internet
 oft als solches bezeichnet wird. Ein [Darknet](https://de.wikipedia.org/wiki/Darknet) versucht durch seine Arbeitsweise den Absender und Empfänger einer
-Nachricht zu verschleiern, das tut cjdns nicht, es bietet nur eine Absicherung der Kommunikation. Sollte diese Anonymität einmal benötigt werden, lässt sich ein
+Nachricht zu verschleiern, das tut cjdns nicht Sollte diese Anonymität einmal benötigt werden, lässt sich ein
 Anonymisierungsdienst, wie etwa [Tor](https://www.torproject.org/) oder [i2p](https://geti2p.net/de/), genauso wie jetzt auch im Internet, über cjdns betreiben.
 
 
