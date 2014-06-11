@@ -14,7 +14,7 @@ Am Wasserturm 18<br />
 38124 Peine
 
 ## Kontakt:
-E-Mail: <t@b128.net>
+E-Mail: <t@b128.net> ([PGP](http://p80.pool.sks-keyservers.net/pks/lookup?op=get&search=0x0210F095CAF6BE19): D6C5 4971 931B 5967 12B7 5279 0210 F095 CAF6 BE19)
 
 ## Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
 
