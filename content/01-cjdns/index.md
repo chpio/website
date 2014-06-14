@@ -80,4 +80,5 @@ oft als solches bezeichnet wird. Ein [Darknet](https://de.wikipedia.org/wiki/Dar
 Nachricht zu verschleiern, das tut cjdns nicht Sollte diese Anonymität einmal benötigt werden, lässt sich ein
 Anonymisierungsdienst, wie etwa [Tor](https://www.torproject.org/) oder [i2p](https://geti2p.net/de/), genauso wie jetzt auch im Internet, über cjdns betreiben.
 
-
+### Weitere Links
+ - [Enigmabox](https://enigmabox.net/)
