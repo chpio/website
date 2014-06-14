@@ -1,14 +1,19 @@
 #content {
   max-width: @screen-lg-min;
-  min-height: 300px;
-  margin: 0 auto;
+  margin: 0 auto 10px auto;
+  background-color: #eee;
 
-  h1 {
-    border-bottom: 1px solid #bbb;
+  > * {
+    margin-left: 5px;
+    margin-right: 5px;
   }
 
+  h1,
   h2 {
-    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 15px 0 5px 0;
+    padding-left: 5px;
+    background-color: #fff;
   }
 
   p {
@@ -22,9 +27,9 @@
   :not(pre) code,
   pre {
     padding: 3px;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #eee;
+    background-color: #ddd;
   }
 
   @media all and (min-width: @screen-sm-min) {
