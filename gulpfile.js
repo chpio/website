@@ -45,7 +45,7 @@ gulp.task('html',
   {
     var ws = gulp.src('./content/**/*.md')
       .pipe(website({
-        websiteUrl: 'https://b128.net/',
+        websiteHost: 'https://b128.net',
         contentHandler: function(content, args) {
           return marked(content);
         }
