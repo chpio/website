@@ -1,7 +1,9 @@
 {
-  "title": "cjdns"
+  "title": "Probleme des Internets"
 }
 #####
+
+# Probleme des derzeitigem Internets
 
 ## Überwachung und Zensur
 
@@ -65,7 +67,7 @@ Das Netzwerk besteht aus vielen, vermaschten W-Lan Punkten, die miteinander verb
   <div class="caption">Video von <a href="https://www.youtube.com/user/ArcanisLupus">ArcanisLupus</a></div>
 </div>
 
-Die opensource Software [cjdns](https://github.com/cjdelisle/cjdns/blob/master/README.md) geht einen ähnlichen Ansatz. Diese bietet aber einige Vorzügen gegenüber
+Die opensource Software [cjdns](<%= page.getUrl("page:/cjdns") %>) geht einen ähnlichen Ansatz. Diese bietet aber einige Vorzügen gegenüber
 der von Freifunk eingesetzten Software an. So werden die übertragenden Daten beim Abschicken von dem Sender verschlüsselt und können nur von dem Empfänger wieder
 entschlüsselt (genannt [Ende-zu-Ende-Verschlüsselung](https://de.wikipedia.org/wiki/Ende-zu-Ende-Verschl%C3%BCsselung)) werden.
 
@@ -81,4 +83,6 @@ Nachricht zu verschleiern, das tut cjdns nicht Sollte diese Anonymität einmal b
 Anonymisierungsdienst, wie etwa [Tor](https://www.torproject.org/) oder [i2p](https://geti2p.net/de/), genauso wie jetzt auch im Internet, über cjdns betreiben.
 
 ### Weitere Links
+ - [cjdns auf Github](https://github.com/cjdelisle/cjdns/blob/master/README.md)
+ - [cjdns auf Wikipedia (en)](https://en.wikipedia.org/wiki/Cjdns)
  - [Enigmabox](https://enigmabox.net/)
