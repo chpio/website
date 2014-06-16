@@ -83,6 +83,7 @@ Nachricht zu verschleiern, das tut cjdns nicht Sollte diese Anonymität einmal b
 Anonymisierungsdienst, wie etwa [Tor](https://www.torproject.org/) oder [i2p](https://geti2p.net/de/), genauso wie jetzt auch im Internet, über cjdns betreiben.
 
 ### Weitere Links
+ - [Your survival guide for an internet blackout](http://www.theverge.com/2014/6/10/5794406/what-do-you-do-when-the-internet-turns-off)
  - [cjdns auf Github](https://github.com/cjdelisle/cjdns/blob/master/README.md)
  - [cjdns auf Wikipedia (en)](https://en.wikipedia.org/wiki/Cjdns)
  - [Enigmabox](https://enigmabox.net/)
