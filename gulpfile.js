@@ -22,7 +22,7 @@ gulp.task('clean',
 );
 
 gulp.task('compress', function() {
-  return gulp.src('./build/**/*')
+  return gulp.src(['./build/**/*', '!**/*.gz'])
     .pipe(gzip({
       gzipOptions: { level: 9 },
     }))
