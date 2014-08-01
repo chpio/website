@@ -18,7 +18,7 @@ sudo apt-get upgrade
 Nach dem das erledigt ist, können alle benötigten Pakete installiert werden.
 
 ```
-sudo apt-get install nodejs git build-essential
+sudo apt-get install nodejs nodejs-legacy git build-essential
 ```
 
 Dann wechseln wir in den Ordner, in dem cjdns installiert werden soll, bei mir ist das */opt*.
@@ -30,9 +30,9 @@ cd /opt
 Im Anschluss wird der cjdns-Code runtergeladen und compiliert.
 
 ```
-git clone https://github.com/cjdelisle/cjdns.git cjdns
+sudo git clone https://github.com/cjdelisle/cjdns.git cjdns
 cd cjdns
-./do
+sudo ./do
 ```
 
 Das kann schon mal eine Minute dauern.
