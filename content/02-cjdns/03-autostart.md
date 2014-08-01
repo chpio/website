@@ -30,7 +30,7 @@ fi
 sed -i 's/"noBackground"\s*:\s*0/"noBackground":1/' /etc/cjdroute.conf
 end script
 
-exec /opt/cjdns/cjdroute > /etc/cjdroute.conf
+exec /opt/cjdns/cjdroute < /etc/cjdroute.conf
 ```
 
 Sie sagt im Grunde nur, dass die ausführbare Datei */opt/cjdns/cjdroute* mit der Datei */etc/cjdroute.conf*
