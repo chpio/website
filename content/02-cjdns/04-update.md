@@ -15,14 +15,14 @@ cd /opt/cjdns
 ```
 2. aktuallisieren den Quellcode:
 ```
-git pull
+sudo git pull
 ```
 3. und werfen den Compiler an:
 ```
-./do
+sudo ./do
 ```
 4. im Anschluss muss der Router neugestarten werden:
 ```
-restart cjdns
+sudo restart cjdns
 ```
 
