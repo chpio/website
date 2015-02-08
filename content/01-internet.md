@@ -8,8 +8,11 @@
 ## Überwachung und Zensur
 
 <div class="float-right">
-  <div class="video-container youtube">
-    <iframe src="https://www.youtube-nocookie.com/embed/iHlzsURb0WI?rel=0" allowfullscreen></iframe>
+  <div class="video-container">
+    <video preload="metadata" controls>
+			<source src="//static.b128.net/video/ueberwachungsstaat.vp9.webm" type='video/webm; codecs="vp9, vorbis"' />
+			<source src="//static.b128.net/video/ueberwachungsstaat.webm" type='video/webm; codecs="vp8, vorbis"' />
+    </video>
   </div>
   <div class="caption">Video von <a href="https://www.youtube.com/user/manniacmind">manniac</a></div>
 </div>
@@ -33,8 +36,11 @@ kann eine Filterung und Überwachung der durchgeleiteten Daten stattfinden.
 ## Netzneutralität
 
 <div class="float-right">
-  <div class="video-container youtube">
-    <iframe src="https://www.youtube-nocookie.com/embed/AQTkUhjVUf4?rel=0" allowfullscreen></iframe>
+  <div class="video-container">
+    <video preload="metadata" controls>
+			<source src="//static.b128.net/video/telekom-netz_der_zukunft.vp9.webm" type='video/webm; codecs="vp9, vorbis"' />
+			<source src="//static.b128.net/video/telekom-netz_der_zukunft.webm" type='video/webm; codecs="vp8, vorbis"' />
+    </video>
   </div>
   <div class="caption">Video von <a href="https://www.youtube.com/user/alexanderlehmann">Alexander Lehmann</a></div>
 </div>
@@ -61,8 +67,11 @@ An diesen kann man sich in das Freifunk Netzwerk einbuchen.
 Das Netzwerk besteht aus vielen, vermaschten W-Lan Punkten, die miteinander verbunden sind. Diese werden meist von Freiwilligen unentgeltlich betrieben.
 
 <div class="float-right">
-  <div class="video-container youtube">
-    <iframe src="https://www.youtube-nocookie.com/embed/cK73sYM3g0Q?rel=0" allowfullscreen></iframe>
+  <div class="video-container">
+		<video preload="metadata" controls>
+			<source src="//static.b128.net/video/meshnet.vp9.webm" type='video/webm; codecs="vp9, vorbis"' />
+			<source src="//static.b128.net/video/meshnet.webm" type='video/webm; codecs="vp8, vorbis"' />
+    </video>
   </div>
   <div class="caption">Video von <a href="https://www.youtube.com/user/ArcanisLupus">ArcanisLupus</a></div>
 </div>
