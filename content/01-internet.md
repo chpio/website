@@ -9,7 +9,7 @@
 
 <div class="float-right">
   <div class="video-container">
-    <video preload="metadata" controls>
+    <video preload="metadata" poster="//static.b128.net/video/ueberwachungsstaat.png" controls>
 			<source src="//static.b128.net/video/ueberwachungsstaat.vp9.webm" type='video/webm; codecs="vp9, vorbis"' />
 			<source src="//static.b128.net/video/ueberwachungsstaat.webm" type='video/webm; codecs="vp8, vorbis"' />
     </video>
@@ -37,7 +37,7 @@ kann eine Filterung und Überwachung der durchgeleiteten Daten stattfinden.
 
 <div class="float-right">
   <div class="video-container">
-    <video preload="metadata" controls>
+    <video preload="metadata" poster="//static.b128.net/video/telekom-netz_der_zukunft.png" controls>
 			<source src="//static.b128.net/video/telekom-netz_der_zukunft.vp9.webm" type='video/webm; codecs="vp9, vorbis"' />
 			<source src="//static.b128.net/video/telekom-netz_der_zukunft.webm" type='video/webm; codecs="vp8, vorbis"' />
     </video>
@@ -68,7 +68,7 @@ Das Netzwerk besteht aus vielen, vermaschten W-Lan Punkten, die miteinander verb
 
 <div class="float-right">
   <div class="video-container">
-		<video preload="metadata" controls>
+		<video preload="metadata" poster="//static.b128.net/video/meshnet.png" controls>
 			<source src="//static.b128.net/video/meshnet.vp9.webm" type='video/webm; codecs="vp9, vorbis"' />
 			<source src="//static.b128.net/video/meshnet.webm" type='video/webm; codecs="vp8, vorbis"' />
     </video>
