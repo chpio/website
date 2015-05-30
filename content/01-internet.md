@@ -9,9 +9,9 @@
 
 <div class="float-right">
   <div class="video-container">
-    <video preload="metadata" poster="//static.b128.net/video/ueberwachungsstaat.png" controls>
-			<source src="//static.b128.net/video/ueberwachungsstaat.vp9.webm" type='video/webm; codecs="vp9, vorbis"' />
-			<source src="//static.b128.net/video/ueberwachungsstaat.webm" type='video/webm; codecs="vp8, vorbis"' />
+    <video preload="metadata" poster="http://gateway.ipfs.io/ipfs/QmW3wpdYKG4oTU6tkmTfLKoNzch4ZVzwacHnXe46SrCTxM/poster.png" controls>
+			<source src="http://gateway.ipfs.io/ipfs/QmW3wpdYKG4oTU6tkmTfLKoNzch4ZVzwacHnXe46SrCTxM/video.vp9.webm" type='video/webm; codecs="vp9, vorbis"' />
+			<source src="http://gateway.ipfs.io/ipfs/QmW3wpdYKG4oTU6tkmTfLKoNzch4ZVzwacHnXe46SrCTxM/video.webm" type='video/webm; codecs="vp8, vorbis"' />
     </video>
   </div>
   <div class="caption">Video von <a href="https://www.youtube.com/user/manniacmind">manniac</a></div>
@@ -37,9 +37,9 @@ kann eine Filterung und Überwachung der durchgeleiteten Daten stattfinden.
 
 <div class="float-right">
   <div class="video-container">
-    <video preload="metadata" poster="//static.b128.net/video/telekom-netz_der_zukunft.png" controls>
-			<source src="//static.b128.net/video/telekom-netz_der_zukunft.vp9.webm" type='video/webm; codecs="vp9, vorbis"' />
-			<source src="//static.b128.net/video/telekom-netz_der_zukunft.webm" type='video/webm; codecs="vp8, vorbis"' />
+    <video preload="metadata" poster="http://gateway.ipfs.io/ipfs/QmSu84kov1tEoj2adfjtxjTXNdcBsVNtxm7Ck9tTRJfKbG/poster.png" controls>
+			<source src="http://gateway.ipfs.io/ipfs/QmSu84kov1tEoj2adfjtxjTXNdcBsVNtxm7Ck9tTRJfKbG/video.vp9.webm" type='video/webm; codecs="vp9, vorbis"' />
+			<source src="http://gateway.ipfs.io/ipfs/QmSu84kov1tEoj2adfjtxjTXNdcBsVNtxm7Ck9tTRJfKbG/video.webm" type='video/webm; codecs="vp8, vorbis"' />
     </video>
   </div>
   <div class="caption">Video von <a href="https://www.youtube.com/user/alexanderlehmann">Alexander Lehmann</a></div>
@@ -68,9 +68,9 @@ Das Netzwerk besteht aus vielen, vermaschten W-Lan Punkten, die miteinander verb
 
 <div class="float-right">
   <div class="video-container">
-		<video preload="metadata" poster="//static.b128.net/video/meshnet.png" controls>
-			<source src="//static.b128.net/video/meshnet.vp9.webm" type='video/webm; codecs="vp9, vorbis"' />
-			<source src="//static.b128.net/video/meshnet.webm" type='video/webm; codecs="vp8, vorbis"' />
+		<video preload="metadata" poster="http://gateway.ipfs.io/ipfs/QmX13oY7LFXnXAUVA1pPzVpBcxkGcj2sPARtBfmhHEMvQm/poster.png" controls>
+			<source src="http://gateway.ipfs.io/ipfs/QmX13oY7LFXnXAUVA1pPzVpBcxkGcj2sPARtBfmhHEMvQm/video.vp9.webm" type='video/webm; codecs="vp9, vorbis"' />
+			<source src="http://gateway.ipfs.io/ipfs/QmX13oY7LFXnXAUVA1pPzVpBcxkGcj2sPARtBfmhHEMvQm/video.webm" type='video/webm; codecs="vp8, vorbis"' />
     </video>
   </div>
   <div class="caption">Video von <a href="https://www.youtube.com/user/ArcanisLupus">ArcanisLupus</a></div>
